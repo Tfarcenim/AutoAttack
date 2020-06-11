@@ -41,7 +41,7 @@ public class AutoAttack {
             if (mc.objectMouseOver.typeOfHit == RayTraceResult.Type.ENTITY) {
                 if (tick < 1)tick++;
                 else {
-                    mc.clickMouse();
+                    //mc.getConnection().;
                     tick = 0;
                 }
             }

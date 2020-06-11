@@ -77,10 +77,4 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-
-    jar {
-        manifest {
-            attributes 'FMLAT': 'autoattack_at.cfg'
-        }
-    }
 }
