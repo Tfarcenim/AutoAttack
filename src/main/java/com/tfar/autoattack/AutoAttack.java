@@ -17,7 +17,6 @@ public class AutoAttack {
 
     static final String MODID = "autoattack";
     private static final Minecraft mc = Minecraft.getInstance();
-    private static int tick = 0;
 
     public static boolean attack_empty = false;
 
@@ -29,10 +28,7 @@ public class AutoAttack {
             if (mc.objectMouseOver instanceof EntityRayTraceResult){
                 Entity entity = ((EntityRayTraceResult) mc.objectMouseOver).getEntity();
                 if (entity instanceof TameableEntity && ((TameableEntity)entity).getOwnerId() != null)return;
-                if (tick < 1)tick++;
-                else {
                     mc.clickMouse();
-                    tick = 0;
                 }
             }
         }
