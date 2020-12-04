@@ -18,18 +18,15 @@ public class AutoAttack {
     static final String MODID = "autoattack";
     private static final Minecraft mc = Minecraft.getInstance();
 
-    public static boolean attack_empty = false;
-
     @SubscribeEvent
     public static void tick(TickEvent.ClientTickEvent event) {
 
         if (mc.gameSettings.keyBindAttack.isKeyDown() && mc.player != null
-                && mc.player.getCooledAttackStrength(0) >= 1){
-            if (mc.objectMouseOver instanceof EntityRayTraceResult){
+                && mc.player.getCooledAttackStrength(0) >= 1) {
+            if (mc.objectMouseOver instanceof EntityRayTraceResult) {
                 Entity entity = ((EntityRayTraceResult) mc.objectMouseOver).getEntity();
-                if (entity instanceof TameableEntity && ((TameableEntity)entity).getOwnerId() != null)return;
-                    mc.clickMouse();
-                }
+                if (entity instanceof TameableEntity && ((TameableEntity) entity).getOwnerId() != null) return;
+                mc.clickMouse();
             }
         }
     }
