@@ -25,7 +25,7 @@ public class AutoAttack {
 	public static void tick(TickEvent.ClientTickEvent e) {
 		if (e.phase == TickEvent.Phase.END && mc.player != null && mc.player.getCooledAttackStrength(0) >= 1
 						&& mc.gameSettings.keyBindAttack.isKeyDown()) {
-			if (mc.objectMouseOver.entityHit != null) {
+			if (mc.objectMouseOver != null && mc.objectMouseOver.entityHit != null) {
 				Entity entity = mc.objectMouseOver.entityHit;
 				mc.playerController.attackEntity(mc.player, entity);
 			}
